@@ -34,4 +34,8 @@ def renovacoes_maximas(self):
     return self._renovacoes_maximas
 
 def definir_maximo_renovacoes(self, novo_maximo):
+    if novo_maximo >= 0:
         self._renovacoes_maximas = novo_maximo
+        return True
+    else:
+        return False
