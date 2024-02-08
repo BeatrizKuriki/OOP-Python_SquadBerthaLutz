@@ -1,5 +1,5 @@
 from pessoas.pessoa import Pessoa
-class Usuario:
+class Usuario(Pessoa):
     def __init__(self, nome, telefone, nacionalidade):
         self.nome = nome
         self.telefone = telefone
