@@ -1,4 +1,4 @@
-# Aprendendo sobre Banco de Dados
+# Aprendendo sobre Orientação a Objetos e Banco de Dados
 
 
 Bem-vindo! Este repositório foi estabelecido como parte integral do Bootcamp Back-End Python Django da WomakersCode, com o propósito de explorar e praticar conceitos fundamentais associados a orientação a objetos e bancos de dados. 
