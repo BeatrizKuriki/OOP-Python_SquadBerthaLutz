@@ -1,6 +1,7 @@
 from ..pessoas import Autor
+from acervo.exemplar import Exemplar
 
-class Livro:
+class Livro(Exemplar):
     def __init__(self, titulo, editora, generos, exemplares_disponiveis, renovacoes_maximas):
         self.titulo = titulo
         self.editora = editora
