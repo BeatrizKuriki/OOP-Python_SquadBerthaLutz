@@ -1,5 +1,5 @@
 from biblioteca import Biblioteca
-import sqlite3
+
 
 
 def mostrar_menu():
@@ -10,6 +10,10 @@ def mostrar_menu():
     print("4 - Devolver Livro")
     print("5 - Atualizar Usuário")
     print("6 - Remover Livro")
+    print("7 - Listas Usuários")
+    print("8 - Listar Autores")
+    print("9 - Listar livros disponíveis")
+    print("10 - Listar livros emprestados")    
     print("0 - Sair")
     escolha = input("Escolha uma opção: ")
     return escolha
