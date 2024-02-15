@@ -1,9 +1,4 @@
 
-
-
-
-
-
 class Emprestimo:
     def __init__(self, exemplar, usuario, data_emprestimo, data_devolucao=None):
         self.exemplar = exemplar
