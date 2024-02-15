@@ -23,9 +23,10 @@ class Biblioteca:
         emprestimo.estado = 'devolvido'
         emprestimo.exemplar.disponivel = True    
 
-    def adicionar_usuario(self, nome, telefone, email):
-        novo_usuario = Usuario(nome, telefone, email)
+    def adicionar_usuario(self, nome, telefone, nacionalidade):
+        novo_usuario = Usuario(nome, telefone, nacionalidade=nacionalidade)
         self.usuarios.append(novo_usuario)
+        print("Usuário adicionado com sucesso.")
 
     def adicionar_livro(self, titulo, autor, genero, quantidade_disponivel, maximo_renovacoes):
         novo_livro = Livro(titulo, autor, genero, quantidade_disponivel, maximo_renovacoes)
@@ -45,7 +46,7 @@ class Biblioteca:
         else:
             print("Lista de Usuários:")
             for usuario in self.usuarios:
-                print(f"Nome: {usuario.nome}, Telefone: {usuario.telefone}, Email: {usuario.email}")
+                print(f"Nome: {usuario._nome}, Telefone: {usuario._telefone}, Nacionalidade: {usuario._nacionalidade}")
 
     def listar_autores(self):
         autores = set(livro.autor for livro in self.livros)
