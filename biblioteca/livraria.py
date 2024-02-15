@@ -2,15 +2,11 @@ from pessoas.usuario import Usuario
 from acervo.livro import Livro
 from emprestimos.emprestimo import Emprestimo
 
-
-
-
 class Biblioteca:
     def __init__(self):
         self.livros = []
         self.usuarios = []
         self.emprestimos = []
-
 
     def registrar_emprestimo(self, exemplar, usuario, data_emprestimo):
         emprestimo = Emprestimo(exemplar, usuario, data_emprestimo)
@@ -32,6 +28,44 @@ class Biblioteca:
         novo_livro = Livro(titulo, autor, genero, quantidade_disponivel, maximo_renovacoes)
         self.livros.append(novo_livro)    
 
+    def emprestar_livro(self, titulo):
+        for livro in self.livros:
+            if livro.titulo == titulo:
+                if livro.quantidade_disponivel > 0:
+                    livro.quantidade_disponivel -= 1
+                    print("Livro emprestado com sucesso.")
+                    return
+                else:
+                    print("Não há exemplares disponíveis para empréstimo.")
+                    return
+        print("Livro não encontrado.")
+
+    def devolver_livro(self, titulo):
+        for livro in self.livros:
+            if livro.titulo == titulo:
+                livro.quantidade_disponivel += 1
+                print("Livro devolvido com sucesso.")
+                return
+        print("Livro não encontrado.")
+
+    def atualizar_usuario(self, nome_antigo, novo_nome, novo_telefone, nova_nacionalidade):
+        for usuario in self.usuarios:
+            if usuario.nome == nome_antigo:
+                usuario.nome = novo_nome
+                usuario.telefone = novo_telefone
+                usuario.nacionalidade = nova_nacionalidade
+                print("Usuário atualizado com sucesso.")
+                return
+        print("Usuário não encontrado.")
+
+    def remover_livro(self, titulo):
+        for livro in self.livros:
+            if livro.titulo == titulo:
+                self.livros.remove(livro)
+                print("Livro removido com sucesso.")
+                return
+        print("Livro não encontrado.")
+
     def listar_emprestimos(self):
         if not self.emprestimos:
             print("Não há empréstimos registrados.")
@@ -39,17 +73,16 @@ class Biblioteca:
             for emprestimo in self.emprestimos:
                 print(f"Empréstimo: {emprestimo.detalhes()}")    
 
-    
     def listar_usuarios(self):
         if not self.usuarios:
             print("Não há usuários cadastrados.")
         else:
             print("Lista de Usuários:")
             for usuario in self.usuarios:
-                print(f"Nome: {usuario._nome}, Telefone: {usuario._telefone}, Nacionalidade: {usuario._nacionalidade}")
+                print(f"Nome: {usuario.nome}, Telefone: {usuario.telefone}, Nacionalidade: {usuario.nacionalidade}")
 
     def listar_autores(self):
-        autores = set(livro.autor for livro in self.livros)
+        autores = set(autor for livro in self.livros for autor in livro.autores)
         print("Lista de Autores:")
         for autor in autores:
             print(autor)
@@ -72,7 +105,13 @@ class Biblioteca:
             for livro in livros_emprestados:
                 print(f"Título: {livro.titulo}, Autor: {livro.autor}, Gênero: {livro.genero}")
 
-
-
-
+    
+    def listar_livros(self):
+        if not self.livros:
+            print("Não há livros cadastrados.")
+        else:
+            print("Lista de Livros:")
+        for livro in self.livros:
+            autores = ', '.join(livro.autores)
+            print(f"Título: {livro.titulo}, Autores: {autores}, Gênero: {livro.genero}, Quantidade Disponível: {livro.quantidade_disponivel}, Quantidade Total: {livro.quantidade_total}, Máximo de Renovações: {livro.maximo_renovacoes}")
 

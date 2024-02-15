@@ -2,41 +2,47 @@ from ..pessoas import Autor
 from acervo.exemplar import Exemplar
 
 class Livro(Exemplar):
-    def __init__(self, titulo, editora, generos, exemplares_disponiveis, renovacoes_maximas):
+    def __init__(self, titulo, autor, genero, quantidade_total, maximo_renovacoes):     
+        super().__init__()  
         self.titulo = titulo
-        self.editora = editora
-        self.generos = generos
-        self.exemplares_disponiveis = exemplares_disponiveis
-        self._renovacoes_maximas = renovacoes_maximas
+        self.autor = autor
+        self.genero = genero
+        self.quantidade_total = quantidade_total  
+        self.quantidade_disponivel = quantidade_total  
+        self.maximo_renovacoes = maximo_renovacoes
         self.autores = []
+        self.exemplares = []  
 
-def adicionar_autor(self, autor):
+    def adicionar_autor(self, autor):
         self.autores.append(autor)
 
-def emprestar_exemplar(self):
-        if self.exemplares_disponiveis > 0:
-            self.exemplares_disponiveis -= 1
+    def adicionar_exemplar(self, exemplar):
+        self.exemplares.append(exemplar)    
+
+    def emprestar_exemplar(self):
+        if self.quantidade_disponivel > 0:
+            self.quantidade_disponivel -= 1
             return True
         else:
             return False
         
-def devolver_exemplar(self):
-        self.exemplares_disponiveis += 1
+    def devolver_exemplar(self):
+        self.quantidade_disponivel += 1
 
-def realizar_renovacao(self):
-        if self._renovacoes_maximas > 0:
-            self._renovacoes_maximas -= 1
+    def realizar_renovacao(self):
+        if self.maximo_renovacoes > 0:
+            self.maximo_renovacoes -= 1
             return True
         else:
             return False
 
-@property
-def renovacoes_maximas(self):
-    return self._renovacoes_maximas
+    @property
+    def renovacoes_maximas(self):
+        return self.maximo_renovacoes
 
-def definir_maximo_renovacoes(self, novo_maximo):
-    if novo_maximo >= 0:
-        self._renovacoes_maximas = novo_maximo
-        return True
-    else:
-        return False
+    def definir_maximo_renovacoes(self, novo_maximo):
+        if novo_maximo >= 0:
+            self.maximo_renovacoes = novo_maximo
+            return True
+        else:
+            return False
