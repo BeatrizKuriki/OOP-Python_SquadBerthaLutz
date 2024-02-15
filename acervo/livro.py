@@ -1,17 +1,20 @@
 from pessoas.autor import Autor
 
 class Livro:
-    def __init__(self, titulo, editora, generos, exemplares, renovacoes_maximas):
+    def __init__(self, titulo, editora, generos, quantidade_disponivel, renovacoes_maximas):
         self.titulo = titulo
         self.editora = editora
         self.generos = generos
-        self.exemplares = exemplares
+        self.quantidade_disponivel = quantidade_disponivel
         self._renovacoes_maximas = renovacoes_maximas
         self.autores = []
 
 
     def exibir_detalhes(self):
-        print(f"Livro: {self.titulo} - Autor: {self.autor} - Gênero: {self.genero}")
+        autores = ", ".join([autor.nome for autor in self.autores])
+        generos = ", ".join(self.generos)
+        print(f"Livro: {self.titulo} - Autores: {autores} - Gêneros: {generos}")
+
     
 
     def adicionar_autor(self, autor):
