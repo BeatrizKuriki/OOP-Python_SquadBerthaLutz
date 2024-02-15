@@ -1,7 +1,7 @@
 # Aprendendo sobre Orientação a Objetos e Banco de Dados
 
 
-Bem-vindo! Este repositório foi estabelecido como parte integral do Bootcamp Back-End Python Django da WomakersCode, com o propósito de explorar e praticar conceitos fundamentais associados a orientação a objetos e bancos de dados. 
+Bem-vindo! Este repositório foi estabelecido como parte integral do Bootcamp Back-End Python Django da WomakersCode, com o propósito de explorar e praticar conceitos fundamentais associados a orientação a objetos. 
 
 ## Objetivo 🎯
 
@@ -9,13 +9,11 @@ Bem-vindo! Este repositório foi estabelecido como parte integral do Bootcamp Ba
 
 ## Projetos Incluídos
 
-### 1. 
 
-Nesta seção, você encontrará uma coleção de exercícios projetados para a prática dos principais comandos SQL. Esses exercícios têm como objetivo fortalecer suas habilidades em consultas, inserções, atualizações e exclusões de dados, proporcionando uma base sólida no uso prático de bancos de dados relacionais.
 
-### 2. Sistema de Gerenciamento de Biblioteca
+### 1. Sistema de Gerenciamento de Biblioteca
 
-Desenvolvido em Python, utilizando o SQLite3 como banco de dados e conectando-se por meio do DBeaver, o Sistema de Gerenciamento de Biblioteca busca oferecer uma solução eficiente e organizada para facilitar o processo de empréstimo de materiais em bibliotecas. Algumas das funcionalidades incluem:
+Desenvolvido em Python, o Sistema de Gerenciamento de Biblioteca busca oferecer uma solução eficiente e organizada para facilitar o processo de empréstimo de materiais em bibliotecas. Algumas das funcionalidades incluem:
 
 #### Funcionalidades Principais
 
@@ -29,12 +27,6 @@ Desenvolvido em Python, utilizando o SQLite3 como banco de dados e conectando-se
 
 1. **Linguagem de Programação:** Python
    No contexto do Sistema de Gerenciamento de Biblioteca, Python foi escolhido pela sua legibilidade e eficiência no desenvolvimento de aplicações. A linguagem oferece bibliotecas robustas para manipulação de dados e interação com bancos de dados, tornando-a uma escolha adequada para este projeto.
-
-2. **Banco de Dados:** SQLite3
-   O SQLite3 foi adotado para armazenar dados relacionados a livros, usuários e transações no Sistema de Gerenciamento de Biblioteca. Sua natureza "serverless" e a capacidade de ser acessado diretamente por bibliotecas Python o tornam adequado para projetos menores ou locais, proporcionando simplicidade na implementação.
-
-3. **Conexão com Banco de Dados:** DBeaver
-   O DBeaver é utilizado como uma interface para interação com o banco de dados SQLite3. Sua capacidade de conexão fácil e sua interface amigável facilitam o gerenciamento e a visualização dos dados armazenados no banco de dados do Sistema de Gerenciamento de Biblioteca. Essa ferramenta auxilia tanto no desenvolvimento quanto na administração do banco de dados durante o ciclo de vida do projeto.
 
 
 ## Colaboradoras 🚀
